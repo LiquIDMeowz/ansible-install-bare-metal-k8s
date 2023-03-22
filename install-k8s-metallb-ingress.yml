@@ -1,0 +1,24 @@
+- hosts: masters
+  become: yes
+  tasks:
+    - name: install metalLB
+      become: yes
+      become_user: meow
+      shell: kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.9/config/manifests/metallb-native.yaml
+      args:
+        chdir: $HOME
+
+    - name: configure MetalLB IP Address Pool
+      become: yes
+      become_user: meow
+      shell: kubectl apply -f <git to ip pool yaml>
+
+    - name: configure MetalLB L2Advertisement
+      become: yes
+      become_user: meow
+      shell: kubectl apply -f <git to l2 advertisement yaml>
+
+    - name: Install Nginx Ingress Controller
+      become: yes
+      become_user: meow
+      shell: kubectl apply -f <git to nginx ingress yaml>

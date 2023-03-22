@@ -7,5 +7,7 @@ ansible-playbook -i hosts install-k8s.yml
 # Bootstrap master node using Ansible: 
 ansible-playbook -i hosts master.yml
 
-$ Join workers using Ansible:
+# Join workers using Ansible:
 ansible-playbook -i hosts join-workers.yml
+
+# Install MetalLB & Ingress Controller from /yaml
