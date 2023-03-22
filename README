@@ -12,3 +12,5 @@ ansible-playbook -i hosts join-workers.yml
 
 # Install MetalLB & Ingress Controller from source
 ansible-playbook -i hosts install-k8s-metallb-ingress.yml
+
+### If master.yml fails to generate join-token for worker nodes, provide -e "ansible_become_password=<pwd>" ###
