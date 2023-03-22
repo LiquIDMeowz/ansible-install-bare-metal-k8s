@@ -11,14 +11,14 @@
     - name: configure MetalLB IP Address Pool
       become: yes
       become_user: meow
-      shell: kubectl apply -f <git to ip pool yaml>
+      shell: kubectl apply -f https://github.com/LiquIDMeowz/Ansible/blob/master/yaml/metallb-pool.yaml
 
     - name: configure MetalLB L2Advertisement
       become: yes
       become_user: meow
-      shell: kubectl apply -f <git to l2 advertisement yaml>
+      shell: kubectl apply -f https://github.com/LiquIDMeowz/Ansible/blob/master/yaml/metallb-l2advertisement.yaml
 
     - name: Install Nginx Ingress Controller
       become: yes
       become_user: meow
-      shell: kubectl apply -f <git to nginx ingress yaml>
+      shell: kubectl apply -f https://github.com/LiquIDMeowz/Ansible/blob/master/yaml/nginx-ingress.yaml
